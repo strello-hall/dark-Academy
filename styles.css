@@ -1,0 +1,193 @@
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+    :root {
+      --neon-red: #ff0033;
+      --dark-bg: #0a0a0a;
+      --deep-black: #111111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a0005);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Neon glow background effect */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255, 0, 51, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    .logo-header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .logo-header h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 
+        0 0 10px var(--neon-red),
+        0 0 20px var(--neon-red),
+        0 0 40px var(--neon-red);
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    .logo-header .subtitle {
+      font-size: 1.1rem;
+      color: #ff3366;
+      text-shadow: 0 0 15px var(--neon-red);
+      margin-top: 8px;
+      font-weight: 700;
+    }
+
+    .form-card {
+      background: rgba(15, 15, 15, 0.95);
+      border: 2px solid var(--neon-red);
+      border-radius: 20px;
+      padding: 30px 25px;
+      box-shadow: 
+        0 0 30px rgba(255, 0, 51, 0.6),
+        inset 0 0 20px rgba(255, 0, 51, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      color: #ff99aa;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--neon-red);
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      background: #111;
+      border: 2px solid #330011;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 0, 51, 0.2);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--neon-red);
+      box-shadow: 
+        0 0 15px var(--neon-red),
+        0 0 25px rgba(255, 0, 51, 0.6);
+      background: #1a0005;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(90deg, #ff0033, #cc0022);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 
+        0 0 20px var(--neon-red),
+        0 8px 15px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 0 30px var(--neon-red),
+        0 12px 20px rgba(255, 0, 51, 0.5);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Decorative wing lines */
+    .wing-left, .wing-right {
+      position: absolute;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--neon-red), transparent);
+      opacity: 0.4;
+      top: 50%;
+      transform: rotate(-25deg);
+    }
+
+    .wing-left { left: -30px; }
+    .wing-right { right: -30px; transform: rotate(25deg); }
+
+    @media (max-width: 480px) {
+      .logo-header h1 {
+        font-size: 2.4rem;
+      }
+      .form-card {
+        padding: 25px 20px;
+      }
+    }
+    #team_logo{
+        position: absolute;
+        opacity: 20%;
+        top: 50%;
+        left: 50%;
+        width: 125%;
+        height: auto;
+        transform: translate(-50%, -50%);
+        user-select: none;
+        pointer-events: none;
+    }
